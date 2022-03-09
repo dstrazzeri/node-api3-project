@@ -27,7 +27,7 @@ router.get("/:id", validateUserId, (req, res) => {
 });
 
 
-router.post("/", validateUser, validateUser, (req, res, next) => {
+router.post("/", validateUser, (req, res, next) => {
   User.insert({ name: req.name })
     .then((newUser) => {
       res.status(201).json(newUser);
